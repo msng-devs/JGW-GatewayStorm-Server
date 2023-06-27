@@ -1,0 +1,4 @@
+SET foreign_key_checks=0;
+TRUNCATE API_ROUTE;
+TRUNCATE SERVICE;
+
