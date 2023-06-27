@@ -4,9 +4,10 @@ const dotenv = require('dotenv');
 const path = require('path');
 const env = process.env.NODE_ENV || 'local';
 const envPath = path.join(__dirname, '..', `/env/.env.${env}`);
+dotenv.config({ path: envPath });
 const fs = require('fs');
 
-dotenv.config({ path: envPath });
+
 
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {
     host: process.env.DB_HOST,

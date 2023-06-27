@@ -82,6 +82,4 @@ node_modules
 env/.env.local
 env/.env.product
 resource/firebase.json
-env/.env
 env/.env.test
-.env
