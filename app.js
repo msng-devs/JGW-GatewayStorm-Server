@@ -22,7 +22,9 @@ const firebaseUrls = [
     'https://identitytoolkit.googleapis.com',
     'https://securetoken.googleapis.com',
     'https://apis.google.com',
-    process.env.FIREBASE_AUTH_DOMAIN
+    process.env.FIREBASE_AUTH_DOMAIN,
+    process.env.SERVICE_DOMAIN,
+    'http://localhost:3000'
 ];
 
 app.use(helmet({
@@ -37,7 +39,6 @@ app.use(helmet({
             objectSrc: ["'none'"],
             mediaSrc: ["'self'"],
             frameSrc: [process.env.FIREBASE_AUTH_DOMAIN,process.env.SERVICE_DOMAIN],
-            frameAncestors:[process.env.SERVICE_DOMAIN]
         },
     },
 }));
