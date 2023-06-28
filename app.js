@@ -36,7 +36,7 @@ app.use(helmet({
             fontSrc: ["'self'", "https:", "data:"],
             objectSrc: ["'none'"],
             mediaSrc: ["'self'"],
-            frameSrc: [process.env.FIREBASE_AUTH_DOMAIN],
+            frameSrc: [process.env.FIREBASE_AUTH_DOMAIN,process.env.SERVICE_DOMAIN],
         },
     },
 }));
