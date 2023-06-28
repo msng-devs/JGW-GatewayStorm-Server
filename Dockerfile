@@ -1,5 +1,4 @@
 FROM node:18
-WORKDIR /
 COPY . .
 
 EXPOSE 3000
