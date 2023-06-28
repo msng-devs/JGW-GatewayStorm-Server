@@ -37,6 +37,7 @@ app.use(helmet({
             objectSrc: ["'none'"],
             mediaSrc: ["'self'"],
             frameSrc: [process.env.FIREBASE_AUTH_DOMAIN,process.env.SERVICE_DOMAIN],
+            frameAncestors:[process.env.SERVICE_DOMAIN]
         },
     },
 }));
