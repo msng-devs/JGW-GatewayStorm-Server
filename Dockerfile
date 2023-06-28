@@ -1,8 +1,8 @@
 FROM node:18
-WORKDIR /workdir
+WORKDIR /app
 COPY . .
 
 EXPOSE 3000
 ENV NODE_ENV=product
-CMD ["npm","install"]
+RUN npm install
 CMD ["npm","run","start"]
