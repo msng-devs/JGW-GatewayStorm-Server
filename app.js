@@ -24,6 +24,7 @@ const firebaseUrls = [
     'https://apis.google.com',
     process.env.FIREBASE_AUTH_DOMAIN,
     process.env.SERVICE_DOMAIN,
+    process.env.GATE_WAY_DOMAIN,
     'http://localhost:3000'
 ];
 
@@ -38,7 +39,7 @@ app.use(helmet({
             fontSrc: ["'self'", "https:", "data:"],
             objectSrc: ["'none'"],
             mediaSrc: ["'self'"],
-            frameSrc: [process.env.FIREBASE_AUTH_DOMAIN,process.env.SERVICE_DOMAIN],
+            frameSrc: [process.env.FIREBASE_AUTH_DOMAIN,process.env.SERVICE_DOMAIN,process.env.GATE_WAY_DOMAIN],
         },
     },
 }));
