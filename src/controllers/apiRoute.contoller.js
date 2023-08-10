@@ -32,7 +32,7 @@ exports.createApiRoute = async (req, res, next) => {
     const apiRoute = {
         path: path,
         method: methodId,
-        role: roleId,
+        role: (routeOptionId === 4)? roleId : null,
         service: serviceId,
         routeOption: routeOptionId,
     };
@@ -88,7 +88,7 @@ exports.updateApiRoute = async (req, res, next) => {
     await apiRoute.update({
         path: path,
         method: methodId,
-        role: roleId,
+        role: (routeOptionId === 4)? roleId : null,
         routeOption: routeOptionId
     });
 
