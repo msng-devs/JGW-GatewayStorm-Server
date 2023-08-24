@@ -158,6 +158,7 @@ const apiRouteToJson = (apiRoute) => {
         method_id: Number(apiRoute.method),
         service_id: Number(apiRoute.service),
         route_option_id: Number(apiRoute.routeOption),
+        priority: Number(apiRoute.priority)
     }
 }
 

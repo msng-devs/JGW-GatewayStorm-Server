@@ -47,7 +47,7 @@ ApiRoute.init({
         type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
-        field: 'PATH_VARIABLE'
+        field: 'PRIORITY'
     }
 }, {
     sequelize,
