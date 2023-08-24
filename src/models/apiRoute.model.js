@@ -43,9 +43,10 @@ ApiRoute.init({
         defaultValue: 1,
         field: 'ROUTE_OPTION_ROUTE_OPTION_PK'
     },
-    pathVariable: {
-        type: DataTypes.STRING(500),
-        allowNull: true,
+    priority: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0,
         field: 'PATH_VARIABLE'
     }
 }, {

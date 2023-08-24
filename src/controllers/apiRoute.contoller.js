@@ -20,7 +20,7 @@ exports.createApiRoute = async (req, res, next) => {
     const roleId = (req.body.role_id) ? Number(req.body.role_id) : null;
     const serviceId = Number(req.params.serviceId);
     const routeOptionId = Number(req.body.option_id);
-
+    const priority = Number(req.body.priority);
 
     if(routeOptionId === 4 && roleId === null) throw new ApplicationException(ApplicationErrorCode.NOT_FOUND, "RBAC option에는 Role이 필수입니다.");
 
@@ -35,6 +35,7 @@ exports.createApiRoute = async (req, res, next) => {
         role: (routeOptionId === 4)? roleId : null,
         service: serviceId,
         routeOption: routeOptionId,
+        priority: priority
     };
     const newApiRoute = await ApiRoute.create(apiRoute);
     res.json(apiRouteToJson(newApiRoute));
@@ -69,7 +70,7 @@ exports.updateApiRoute = async (req, res, next) => {
     const methodId = Number(req.body.method);
     const roleId = (req.body.role_id) ? Number(req.body.role_id) : null;
     const routeOptionId = Number(req.body.option_id);
-
+    const priority = Number(req.body.priority);
 
     if(path === "/api/v1/refresh/**" || path === "/api/v1/refresh") throw new ApplicationException(ApplicationErrorCode.NOT_FOUND, "refresh api는 생성할 수 없습니다.");
 
@@ -89,7 +90,8 @@ exports.updateApiRoute = async (req, res, next) => {
         path: path,
         method: methodId,
         role: (routeOptionId === 4)? roleId : null,
-        routeOption: routeOptionId
+        routeOption: routeOptionId,
+        priority: priority
     });
 
     res.json(apiRouteToJson(apiRoute));
